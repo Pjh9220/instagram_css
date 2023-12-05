@@ -1,9 +1,13 @@
-# instagram_css
+My First FRONT-END(HTML/CSS) Project
 
-################
+#instagram templete
 
-Instagram - front end
+######################################
 
-Author : PJH
+2023-10-27 ~ 2023-10-30 Project
 
-#################
+Javascript, html
+
+author : PJH
+
+######################################
