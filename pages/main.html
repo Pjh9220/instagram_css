@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/statics/images/icon.png">
+    <title>instagram made by PJH</title>
+    <style>
+        body{
+            margin :0
+        }
+        .wrap{
+            display: flex;
+            align-content: center;
+        }
+        .tap{
+            height: 100vh;
+            width: 330px;
+            position: fixed;
+            border-right: solid 1px lightgray;
+        }
+        .tap > *:hover{
+            background-color: rgb(228, 228, 228);
+        }
+        .tap > *:active{
+            background-color: rgba(236, 236, 236, 0.932);
+        }
+        #instagram{
+            background-color: white;
+            border: 0;
+            margin-left: 20px;
+            margin-top: 40px;
+        }
+        #instagram img{
+            width:100px;
+            height:30px;
+            border: 0;
+        }
+        #home{
+            display: flex;
+            align-items:center;
+            margin-left: 10px;
+            width:300px;
+            height:50px;
+            border-radius: 10px;
+        }
+        #home img{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #search{
+            display: flex;
+            align-items:center;
+            margin-left: 10px;
+            width:300px;
+            height:50px;
+            border-radius: 10px;
+        }
+        #search img{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #explore{
+            display: flex;
+            align-items:center;
+            margin-left: 10px;
+            width:300px;
+            height:50px;
+            border-radius: 10px;
+        }
+        #explore img{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #reels{
+            display: flex;
+            align-items:center;
+            margin-left: 10px;
+            width:300px;
+            height:50px;
+            border-radius: 10px;
+        }
+        #reels img{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #message{
+            display: flex;
+            align-items:center;
+            margin-left: 10px;
+            width:300px;
+            height:50px;
+            border-radius: 10px;
+        }
+        #message img{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #alert{
+            display: flex;
+            align-items:center;
+            margin-left: 10px;
+            width:300px;
+            height:50px;
+            border-radius: 10px;
+        }
+        #alert img{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #make{
+            display: flex;
+            align-items:center;
+            margin-left: 10px;
+            width:300px;
+            height:50px;
+            border-radius: 10px;
+        }
+        #make img{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #profile{
+            display: flex;
+            align-items:center;
+            margin-left: 10px;
+            width:300px;
+            height:50px;
+            border-radius: 10px;
+        }
+        #profile img{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #thread{
+            display: flex;
+            align-items:center;
+            margin-left: 10px;
+            width:300px;
+            height:50px;
+            border-radius: 10px;
+            margin-top: 100%;
+        }
+
+        #thread img{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #more{
+            display: flex;
+            align-items:center;
+            margin-left: 10px;
+            width:300px;
+            height:50px;
+            border-radius: 10px;
+        }
+        #more img{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width:800px;
+            height:100vw;
+            margin-left:600px;
+
+        }
+        .story{
+            width:800px;
+            height:100px;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+
+        }
+        #story{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 25px;
+            width: 70px;
+            cursor:pointer
+        }
+        #story img{
+            width:60px;
+            height:80px;
+            border-radius: 100%;
+            margin: 10px;
+            border: solid 2px rgb(223, 63, 63);
+        }
+        #story #id{
+            width: 80px;
+        }
+        canvas:nth-of-type(1){
+            margin-left: 30px;
+        }
+        #id{
+            width:100px;
+            height:20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 0px;
+            
+        }
+        .board{
+            width:600px;
+            height:100vmin;
+            margin-top: 50px;
+        }
+        .board_1{
+            width: 600px;
+            height: 900px;
+        }
+        #top{
+            width: 600px;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #top #name{
+            margin-left: 10px;
+            height: 60px;
+        }
+        #name h4{
+            margin: 0;
+        }
+        #name p{
+            margin:0;
+        }
+        #top > p{
+            margin: 0;
+            color:gray;
+        }
+        #top #more{
+            width:30px;
+            height: 30px;
+            background-image: url("/statics/images/dot.png");
+            margin-left: 320px;
+            margin-top: 10px;
+            border: 0;   
+        }
+        #top img{
+            height:50px;
+            width:50px;
+            border-radius: 70px;
+        }
+        #picture{
+            width: 600px;
+            height:585px;
+            ;
+        }
+        #bottom{
+            width: 600px;
+            height: 230px;
+        }
+        #like{
+            width:30px;
+            height:30px;
+            background-image: url("/statics/images/like.png");
+            border: 0;
+        }
+        #comment{
+            width:30px;
+            height:30px;
+            background-image: url("/statics/images/comment.png");
+            margin-left: 10px;
+            border: 0;
+        }
+        #share{
+            width:30px;
+            height:30px;
+            background-image: url("/statics/images/share.png");
+            margin-left: 10px;
+            border: 0;
+        }
+        #save{
+            width:30px;
+            height:30px;
+            background-image: url("/statics/images/save.png");
+            float: right;
+            border: 0;
+        }
+        #idcomment{
+            display: flex;
+            height:30px;
+            margin:0;
+            padding: 0;
+        }
+        #idcomment p{
+            font-size: 17px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+        #idcomment a{
+            margin-left:10px
+        }
+        #comment_bottom p{
+            color:gray;
+            font-size: 16px;
+            margin:0;
+        }
+        #comments{
+            margin-bottom: 0;;
+        }
+        #bottom > p{
+            margin-top: 0;
+            color:gray;
+            font-size: 16px;
+        }
+        #picture{
+            background-size: cover;
+        } 
+        hr{
+            border: solid 1px lightgray;
+        }
+        #line{
+            width: 600px;
+            height:20px;
+        }
+        #icon > *{
+            cursor:pointer
+        }
+        .recommend{
+            width:350px;
+            height:600px;
+            margin-top: 30px;
+        }
+        .recommend > *{
+            width:350px;
+            height:80px;
+            display: flex;
+        
+        }
+        .recommend img{
+            height:50px;
+            width:50px;
+            border-radius: 70px;
+            margin: 15px;
+        }
+        #nickname{
+            display: flex;
+            flex-direction: column;
+            width: 50px;
+            height: 40px;
+            margin-top: 20px;
+        }
+        #nickname > *{
+            margin:0;
+        }
+        .recommend a{
+            display: inline;
+        }
+        #recommend_bottom{
+            color:gray
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="tap">
+            <button id="instagram" onClick="location.href='/pages/main.html'" style='cursor:pointer'>
+                <img src="/statics/images/instagram.png">
+            </button>
+            <div id="home" style='cursor:pointer'>
+                <img src="/statics/images/home.png">
+                <p>홈</p>
+            </div>
+            <div id="search" style='cursor:pointer'>
+                <img src="/statics/images/search.png">
+                <p>검색</p>
+            </div>
+            <div id="explore" style='cursor:pointer'>
+                <img src="/statics/images/explore.png">
+                <p>탐색 탭</p>
+            </div>
+            <div id="reels" style='cursor:pointer'>
+                <img src="/statics/images/reels.png">
+                <p>릴스</p>
+            </div>
+            <div id="message" style='cursor:pointer'>
+                <img src="/statics/images/message.png">
+                <p>메시지</p>
+            </div>
+            <div id="alert" style='cursor:pointer'>
+                <img src="/statics/images/alert.png">
+                <p>알림</p>
+            </div>
+            <div id="make" style='cursor:pointer'>
+                <img src="/statics/images/make.png">
+                <p>만들기</p>
+            </div>
+            <div id="profile" style='cursor:pointer'>
+                <img src="/statics/images/profile.png">
+                <p>프로필</p>
+            </div>
+            <div id="thread" style='cursor:pointer'>
+                <img src="/statics/images/thread.png">
+                <p>Threads</p>
+            </div>
+            <div id="more" style='cursor:pointer'>
+                <img src="/statics/images/more.png">
+                <p>더 보기</p>
+            </div>
+        </div>
+        <div class="main">
+            <div class="story">
+                <div id="story">
+                    <img src="/statics/images/profile1.jpg"><div id="id">Jh_97</div>
+                </div>
+                <div id="story">
+                    <img src="/statics/images/profile3.png"><div id="id">gayomi_97</div>
+                </div>
+                <div id="story">
+                    <img src="/statics/images/profile2.png"><div id="id">wang2amja</div>
+                </div>
+                <div id="story">
+                    <img src="/statics/images/profile4.jpg"><div id="id">Dog_love</div>
+                </div>
+                <div id="story">
+                    <img src="/statics/images/profile5.jpg"><div id="id">Nct_Mark</div>
+                </div>
+                <div id="story">
+                    <img src="/statics/images/profile6.jpg"><div id="id">Ma_vely</div>
+                </div>
+                <div id="story">
+                    <img src="/statics/images/profile7.jpg"><div id="id">Chanho_kim</div>
+                </div>
+                <div id="story">
+                    <img src="/statics/images/profile8.png"><div id="id">PangPang2</div>
+                </div>
+            </div>   
+            <div class="board">
+                <div class="board_1">
+                    <div id="top">
+                        <img src="/statics/images/profile1.jpg">
+                        <div id = "name">
+                            <h4>Jh_97</h4>
+                            <p>Seoul,South Korea</p>
+                        </div>
+                        <p>·1시간</p>
+                        <button id="more"></button>
+                    </div>
+                    <div id="picture" style="background-image: url(/statics/images/board1.jpg);"></div>
+                    <div id="bottom">
+                        <div id="icon">
+                            <button id="like"></button>
+                            <button id="comment"></button>
+                            <button id="share"></button>
+                            <button id="save"></button>
+                        </div>
+                        <h4>좋아요 46개</h4>
+                        <div id = "idcomment">
+                            <p>Jh_97</p>
+                            <a>오늘 기분 최고~~</a>
+                        </div>
+                        <div id="comment_bottom">
+                            <p>더 보기</p>
+                            <br>
+                            <p>댓글 12개 모두보기</p>
+                            <p>댓글달기...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id ="line"><hr></div>
+            <div class="board">
+                <div class="board_1">
+                    <div id="top">
+                        <img src="/statics/images/profile2.png">
+                        <div id = "name">
+                            <h4>wang2amja</h4>
+                            <p>Nonsan,South Korea</p>
+                        </div>
+                        <p>·2일</p>
+                        <button id="more"></button>
+                    </div>
+                    <div id="picture" style="background-image: url(/statics/images/board2.jpg);"></div>
+                    <div id="bottom">
+                        <div id="icon">
+                            <button id="like"></button>
+                            <button id="comment"></button>
+                            <button id="share"></button>
+                            <button id="save"></button>
+                        </div>
+                        <h4>좋아요 26개</h4>
+                        <div id = "idcomment">
+                            <p>wang2amja</p>
+                            <a>잘생긴 내얼굴~~</a>
+                        </div>
+                        <div id="comment_bottom">
+                            <p>더 보기</p>
+                            <br>
+                            <p>댓글 20개 모두보기</p>
+                            <p>댓글달기...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id ="line"><hr></div>
+            <div class="board">
+                <div class="board_1">
+                    <div id="top">
+                        <img src="/statics/images/profile3.png">
+                        <div id = "name">
+                            <h4>gayomi_97</h4>
+                            <p>Jeju-do,South Korea</p>
+                        </div>
+                        <p>·3일</p>
+                        <button id="more"></button>
+                    </div>
+                    <div id="picture" style="background-image: url(/statics/images/board3.jpg);"></div>
+                    <div id="bottom">
+                        <div id="icon">
+                            <button id="like"></button>
+                            <button id="comment"></button>
+                            <button id="share"></button>
+                            <button id="save"></button>
+                        </div>
+                        <h4>좋아요 9220개</h4>
+                        <div id = "idcomment">
+                            <p>gayomi_97</p>
+                            <a>오늘 날씨 좋다~~~~!!!!</a>
+                        </div>
+                        <div id="comment_bottom">
+                            <p>더 보기</p>
+                            <br>
+                            <p>댓글 127개 모두보기</p>
+                            <p>댓글달기...</p>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <div id ="line"><hr></div>    
+        </div>      
+        <div class="recommend">
+            <div id="recommend1">
+                <img src="/statics/images/profile1.jpg">
+                <div id="nickname"><h4>Jh_97</h4><p>박정현</p></div>
+            </div>
+            <div id="p"><p style="color: gray; font-size: 17px; font-weight: bold;">회원님을 위한 추천</p><p style="margin-left: 120px; margin-top: 20px;">모두 보기</p></div>
+            <div id="recommend2">
+                <img src="/statics/images/profile9.jpg">
+                <div id="nickname"><h4>dlwlrma</h4><nobr>회원님을 팔로우합니다</nobr></div>
+            </div>
+            <div id="recommend3">
+                <img src="/statics/images/profile10.jpg">
+                <div id="nickname"><h4>Nalgangdo</h4><nobr>회원님을 팔로우합니다</nobr></div>
+            </div>
+            <div id="recommend4">
+                <img src="/statics/images/profile11.jpg">
+                <div id="nickname"><h4>Jisoo</h4><nobr>회원님을 팔로우합니다</nobr></div>
+            </div>
+            <div id="recommend5">
+                <img src="/statics/images/profile12.jpg">
+                <div id="nickname"><h4>millionaire</h4><nobr>회원님을 팔로우합니다</nobr></div>
+            </div>
+            <div id="recommend_bottom">
+                소개 도움말 홍보 센터 API 채용 정보 개인정보처리방침 약관 위치 언어 Meta Verified 
+                <br><br>© 2023 INSTAGRAM FROM META
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

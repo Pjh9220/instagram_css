@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/statics/images/icon.png">
+    <title>instagram made by PJH</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #wrapper{
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        .ins {
+            background-image :url(/statics/images/instagram.png);
+            width: 170px;
+            height: 50px;
+            background-size: 100% 100%;
+            background-color: white;
+            margin-left: 90px;
+            margin-top: 40px;
+        }
+        .gif{
+            display: inline-block;
+        }
+        .login{
+            border :solid 1px lightgray;
+            width:350px;
+            height:400px;
+            display: inline-block;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .id_pass{
+            margin-left: 50px;
+            margin-top: 40px;
+        }
+        #id{
+            width:250px;
+            height: 35px;
+            background-color: rgb(250, 250, 250);
+            border: solid 1px lightgray;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        #password{
+            margin-top: 5px;
+            width:250px;
+            height: 35px;
+            background-color: rgb(250, 250, 250);
+            border: solid 1px lightgray;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        #login{
+            width:255px;
+            height: 30px;
+            margin-top : 15px;
+            border-radius: 8px;
+            border : 0;
+            background-color:rgb(76, 181, 249);
+            color:white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        #login:hover{
+            background-color: blue;
+            transition: all 1.5s;
+        }
+        #or{
+            display: inline-flex;
+            margin-left: 40px;
+            margin-top: 20px;
+            color: gray;
+            font-weight: bold;
+        }
+        #line{
+            width: 100px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .facebook{
+            margin-left:90px;
+            margin-top:10px;
+        }
+        #facebook{
+            border: 0;
+            background-color: white;
+            display: inline-flex;
+            font-weight: bold;
+            color: gray;
+        }
+        .forgot{
+            margin-left: 105px;
+            margin-top: 18px;
+        }
+        #forgot{
+            background-color: white;
+            border : 0;
+            font-size: 12px;
+        }
+        .sign{
+            border: solid 1px lightgray;
+            width: 350px;
+            height:60px;
+            margin-top: 37px;
+            font-size: 14px;
+        }
+        #sign{
+            display: inline-flex;
+            margin-left: 80px;
+        }
+        p{
+            margin-top: 21px;
+        }
+        #signup{
+            border: 0;
+            background-color: white;
+            text-align: center;
+            margin-top: 7px;
+            font-size: 14px;
+            color:rgb(78, 160, 299);
+            font-weight: bold;
+        }
+        .download > p{
+            text-align: center;
+            font-size: 14px;
+        }
+        #google{
+            border: 0;
+            background-color: white;
+            margin-left: 40px;
+        }
+        #microsoft{
+            border: 0;
+            background-color: white;
+        }
+        footer{
+            margin: 0 auto;
+            bottom: 0;
+            margin-top: 70px;
+            font-size: 12px;
+        }
+        a{
+            text-decoration: none;
+            color:gray;
+            padding:5px;
+        }
+        a:hover,a:active{
+            color:gray;
+            text-decoration: underline;
+        }
+        .language{
+            text-align: center;
+        }
+        #language{
+            display: inline-flex;
+            color:gray;
+        }
+        select {
+            margin-top: 10px;
+            border: 0;
+            color: gray;
+            
+        }
+    
+
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="gif">
+            <img src ="/statics/images/phone.gif">
+        </div>
+        <div class="login">
+            <div class="ins"></div>
+            <form class ="id_pass">
+                <input id="id" type="id" placeholder="전화번호,사용자 이름 또는 이메일">
+                <input id="password" type="password" placeholder="비밀번호">
+                <input id="login" type="button" style='cursor:pointer' onClick="location.href='/pages/main.html'" value="로그인">
+            </form>
+            <div id="or">
+                <div id="line"><hr size= "0.7px" color="lightgray"></div>
+                또는<div id="line"><hr size= "0.7px" color="lightgray"></div>
+            </div>
+            <div class="facebook">
+                <button id="facebook" style='cursor:pointer' onClick= "location.href='https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26locale%3Dko_KR%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26response_type%3Dcode%252Cgranted_scopes%26scope%3Demail%26state%3D%257B%2522fbLoginKey%2522%253A%2522f0zt2d844ajt141n609azzetf1t9ehg84hsi6pi74q9oikzn1b%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Db4397137-107b-49e8-98d7-bd1f8226700f%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%2522f0zt2d844ajt141n609azzetf1t9ehg84hsi6pi74q9oikzn1b%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%23_%3D_&display=page&locale=ko_KR&pl_dbl=0'">
+                    <img src ="/statics/images/facebook.png">
+                    Facebook으로 로그인
+                </button>
+            </div>
+            <div class="forgot">
+                <button id="forgot" style='cursor:pointer' onClick= "location.href='https://www.instagram.com/accounts/password/reset/'">비밀번호를 잊으셨나요?</button>
+            </div>
+            <div class="sign">
+                <div id="sign">
+                    <p>계정이 없으신가요?</p>
+                    <button id="signup" style='cursor:pointer' onClick= "location.href='https://www.instagram.com/accounts/emailsignup/'">가입하기</button>
+                </div>    
+            </div>
+            <div class="download">
+                <p>앱을 다운로드하세요.</p>
+                <button id="google" style='cursor:pointer' onClick= "location.href='https://play.google.com/store/search?q=%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8&c=apps&hl=ko-KR'">
+                    <img src="/statics/images/googleplay.png" width="120px" height="40px"></button>
+                <button id="microsoft" style='cursor:pointer' onClick= "location.href='https://apps.microsoft.com/detail/instagram/9NBLGGH5L9XT?hl=ko-kr&gl=KR'">
+                    <img src="/statics/images/microsoft.png" width="120px" height="40px"></button>
+            </div>
+        </div>    
+    </div>    
+        <footer>
+            <ul>
+                <a href ="https://l.instagram.com/?u=https%3A%2F%2Fabout.meta.com%2F&e=AT3wIDgCDVB1c0Q_F5FGbCX4jPDCA9TDHsDhFXX1kkKEfHbr9rJjEzpNhee3Me0zTFMHA3vBdz9N-Q2Ic9n_yLIN9riggTd8&s=1">Meta</a>
+                <a href ="https://about.instagram.com/">소개</a>
+                <a href ="https://about.instagram.com/blog/">블로그</a>
+                <a href ="https://about.instagram.com/about-us/careers">채용정보</a>
+                <a href ="https://help.instagram.com/">도움말</a>
+                <a href ="https://developers.facebook.com/docs/instagram">API</a>
+                <a href ="https://privacycenter.instagram.com/policy/?entry_point=ig_help_center_data_policy_redirect">개인정보처리방침</a>
+                <a href ="https://help.instagram.com/581066165581870/">약관</a>
+                <a href ="https://www.instagram.com/explore/locations/">위치</a>
+                <a href ="https://www.instagram.com/web/lite/">Instagram Lite</a>
+                <a href ="https://www.threads.net/login">Threads</a>
+                <a href ="https://www.facebook.com/help/instagram/261704639352628">연락처 업로드 & 비사용자</a>
+                <a href ="https://about.meta.com/technologies/meta-verified/">Meta Verified</a>
+            </ul>
+            <div class="language">
+                <form id="language">
+                    <select>
+                        <option>한국어</option>
+                        <option>Afrikaans</option>
+                        <option>Čeština</option>
+                        <option>Dansk</option>
+                        <option>Deutsch</option>
+                        <option>Ελληνικά</option>
+                        <option>English</option>
+                        <option>Español (España)</option>
+                        <option>Español</option>
+                        <option>Suomi</option>
+                        <option>Français</option>
+                        <option>Bahasa Indonesia</option>
+                        <option>Italiano</option>
+                        <option>日本語</option>
+                        <option>Bahasa Melayu</option>
+                        <option>Norsk</option>
+                        <option>Nederlands</option>
+                        <option>Polski</option>
+                        <option>Português (Brasil)</option>
+                        <option>Português (Portugal)</option>
+                        <option>Русский</option>
+                        <option>Svenska</option>
+                        <option>ภาษาไทย</option>
+                        <option>Filipino</option>
+                        <option>Türkçe</option>
+                        <option>中文(简体)</option>
+                        <option>中文(台灣)</option>
+                        <option>বাংলা</option>
+                        <option>ગુજરાતી</option>
+                        <option>हिन्दी</option>
+                        <option>Hrvatski</option>
+                        <option>Magyar</option>
+                        <option>ಕನ್ನಡ</option>
+                        <option>മലയാളം</option>
+                        <option>मराठी</option>
+                        <option>Slovenčina</option>
+                        <option>Български</option>
+                        <option>Română</option>
+                        <option>Српски</option>
+                        <option>Українська</option>
+                    </select>
+                    <p>© 2023 Instagram from Meta</p>
+                </form>
+            </div>
+
+        </footer>
+    
+        
+
+    
+</body>
+</html>
